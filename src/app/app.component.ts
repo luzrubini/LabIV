@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,10 @@ export class AppComponent {
     this.edad2 = 0
     this.suma = 0
     this.promedio =0
+  }
+  limpiar(form: NgForm)
+  {
+    form.resetForm()
   }
   sumar()
   {

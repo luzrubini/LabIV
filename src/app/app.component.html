@@ -8,14 +8,14 @@
 </head>
 <body>
   <div class="login">
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="limpiar(myForm)">
       <h1>{{title}}</h1>
       <h3>"Ingrese dos edades"</h3>
       Edad 1
       <input type="number" name="num1" placeholder="Edad 1" required="required" [(ngModel)]="edad1"/>
       Edad 2
       <input type="number" name="num2" placeholder="Edad 2" required="required" [(ngModel)]="edad2" />
-      <button type="reset" class="btn btn-primary" value="Limpiar">Limpiar</button>
+      <button type="button" class="btn btn-primary" (click)=limpiar(myForm)>Limpiar</button>
       <button type ="button" class="btn btn-primary"(click)=sumar()>Calcular</button>
       <br>
       Suma
